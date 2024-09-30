@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retro Forum Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"rel="stylesheet"type="text/css"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-4/5 mx-auto">
+    <nav>
+      <div class="my-5">
+        <div class=" navbar bg-base-100">
+          <div class="flex-1">
+            <img src="images/logo.png" alt="#">
+          </div>
+          <div class="flex-none">
+            <div class="dropdown dropdown-end">
+              <div tabindex="0" role="button" class="btn btn-circle">
+                <div class="indicator tooltip" data-tip="Home">
+                  <i class="fa-sharp fa-solid fa-house"></i>
+                </div>
+              </div>
+              <div tabindex="0" role="button" class="btn btn-circle">
+                <div class="indicator tooltip" data-tip="Edit">
+                  <i class="fa-solid fa-pen"></i>
+                </div>
+              </div>
+              <div tabindex="0" role="button" class="btn btn-circle">
+                <div class="indicator tooltip" data-tip="Friends">
+                  <i class="fa-solid fa-user-plus"></i>
+                </div>
+              </div>
+              <div tabindex="0" role="button" class="btn btn-circle">
+                <div class="indicator tooltip" data-tip="Page">
+                  <i class="fa-solid fa-flag"></i>
+                  <!-- <span class="badge badge-sm indicator-item">8</span> -->
+                </div>
+              </div>
+              <div class="dropdown dropdown-end">
+                <button class="h-12 w-24 bg-blue-400 text-white font-medium rounded-full">Sign In</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section class=" bg-black rounded-2xl bg-cover bg-center bg-no-repeat"
+        style="background-image: url(images/bgbanner.png);">
+        <div class="flex  justify-around items-center h-[500px] text-white">
+          <div>
+            <h3 class="text-5xl font-bold leading-normal">Welcome to the<br><span class="text-blue-400">ReTro</span> Forum</h3>
+            <p class="font-normal leading-normal">Share your favorite opinion and wp<br>forum coffee mug!</p>
+            <label class="input input-bordered flex items-center gap-2 mt-4 rounded-full">
+              <input type="text" class="grow" placeholder="Search here anything..." />
+              <!-- <span class="btn w-28 h-5 ">Search</span> -->
+              <button class="btn-sm bg-blue-400 rounded-full font-medium px-7">Search</button>
+            </label>
+          </div>
+          <div class="flex justify-between gap-5 bg-white text-black p-10 rounded-xl text-xl">
+            <div>
+              <p>Registered Users</p>
+              <p>Forum</p>
+              <p>Topics</p>
+              <p>Replies</p>
+            </div>
+            <div>
+              <p>01</p>
+              <p>05</p>
+              <p>01</p>
+              <p>01</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
