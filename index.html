@@ -137,34 +137,12 @@
           <p class="font-medium">Yes, you can run unit tests and view the results directly within the app. The <br>
           integrated testing features allow for a streamlined.</p>
         </div>
+        <!-- Add loading Spinner -->
+        <div class="flex justify-center">
+          <span id="latest-loading-spinner" class="loading loading-spinner loading-lg"></span>
+        </div>
         <!-- latest post card -->
-        <div class="grid grid-cols-3 gap-5">
-          <!-- 1 -->
-          <div class="card bg-base-100 w-auto shadow-lg border border-gray-200">
-            <figure class="px-10 pt-10">
-              <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
-                class="rounded-xl" />
-            </figure>
-            <div class="card-body">
-              <div class="flex gap-3">
-                <span class="material-symbols-outlined">
-                date_range
-                </span>
-                <p>29 January 2024</p>
-              </div>
-              <h2 class="card-title text-sm font-bold leading-relaxed">What will a mars habitat force that impact in our daily life!!!</h2>
-              <p class="leading-relaxed">Yes, you can run unit tests and view the results directly within the app.</p>
-              <div class="flex gap-4">
-                <img class="w-11 h-11 mt-1 rounded-full" src="images/shakil.jpg" alt="">
-                <div>
-                  <h6 class="font-medium">Cameron Williamson</h6>
-                  <p>Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div id="latest-post-container" class="grid grid-cols-3 gap-5">
         </div>
       </section>
     </main>

@@ -13,6 +13,7 @@ const loadAllPost = async() => {
 
   displayPost(allPosts);
   
+  disPlayLatestPost()
 }
 
 
@@ -67,6 +68,55 @@ const displayPost = (posts) => {
 
   });
 
+}
+
+
+const disPlayLatestPost = async() => {
+  const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
+  const data = await response.json()
+
+  const loadingSpinner = document.getElementById('latest-loading-spinner')
+  if (data.length > 0){
+    loadingSpinner.classList.add('hidden')
+  }else{
+    loadingSpinner.classList.add('block')
+  }
+  
+  data.forEach (latestNews => {
+    console.log(latestNews);
+    const latestPostContainer = document.getElementById('latest-post-container')
+    const div = document.createElement('div')
+    div.innerHTML = `
+      <div class="card bg-base-100 w-auto shadow-lg border border-gray-200">
+            <figure class="px-10 pt-10">
+              <img
+                src="${latestNews.cover_image}"
+                alt="#"
+                class="rounded-xl" />
+            </figure>
+            <div class="card-body">
+              <div class="flex gap-3">
+                <span class="material-symbols-outlined">
+                date_range
+                </span>
+                <p>${latestNews.author.posted_date ?latestNews.author.posted_date : "No publish date"}</p>
+              </div>
+              <h2 class="card-title text-sm font-bold leading-relaxed">${latestNews.title}</h2>
+              <p class="leading-relaxed">${latestNews.description.slice(0,75)}</p>
+              <div class="flex gap-4">
+                <img class="w-11 h-11 mt-1 rounded-full" src="${latestNews.profile_image}" alt="">
+                <div>
+                  <h6 class="font-medium">${latestNews.author.name}</h6>
+                  <p>${latestNews.author.designation ? latestNews.author.designation : "Unknown"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    `;
+
+    latestPostContainer.append(div)
+
+  })
 }
 
 
