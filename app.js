@@ -23,12 +23,15 @@ const displayPost = (posts) => {
   categoryCardContainer.innerHTML = '';
 
   posts.forEach(post => {
+    // console.log(post);
     const categoryCard = document.createElement('div')
+    
+  
     categoryCard.innerHTML = `
           <div class="card bg-gray-100 shadow-2xl">
             <div class="card-body flex flex-row">
               <div class="indicator">
-                <span class="indicator-item badge badge-secondary badge-sm bg-red-500"></span>
+                <span class="indicator-item badge badge-secondary badge-sm ${post.isActive ? 'bg-green-400 border-green-400' : 'bg-red-500'} "></span>
                 <img src="${post.image}" class="grid h-16 w-16 rounded-xl place-items-center" alt="">
               </div>
               <div class="ml-5">
@@ -66,6 +69,8 @@ const displayPost = (posts) => {
     `;
     categoryCardContainer.append(categoryCard);
 
+    
+
   });
 
 }
@@ -83,7 +88,6 @@ const disPlayLatestPost = async() => {
   }
   
   data.forEach (latestNews => {
-    console.log(latestNews);
     const latestPostContainer = document.getElementById('latest-post-container')
     const div = document.createElement('div')
     div.innerHTML = `
