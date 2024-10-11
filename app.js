@@ -1,4 +1,4 @@
-const loadAllPost = async() => {
+const loadAllPost = async(view) => {
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
   const data = await res.json();
   const allPosts = data.posts;
@@ -12,21 +12,16 @@ const loadAllPost = async() => {
   }
 
   displayPost(allPosts);
-  
+
   disPlayLatestPost()
-}
+}  
 
 
 const displayPost = (posts) => {
   const categoryCardContainer = document.getElementById('category-card-container')
-
   categoryCardContainer.innerHTML = '';
-
   posts.forEach(post => {
-    // console.log(post);
     const categoryCard = document.createElement('div')
-    
-  
     categoryCard.innerHTML = `
           <div class="card bg-gray-100 shadow-2xl">
             <div class="card-body flex flex-row">
@@ -59,7 +54,7 @@ const displayPost = (posts) => {
                       <p>${post.posted_time} min</p>
                     </div>
                   </div>
-                  <button class="w-6 h-6 rounded-full">
+                  <button onclick="viewPost('${post ?.title}' , '${post.view_count}')"; class="w-6 h-6 rounded-full">
                     <img src="images/open-mail.png" alt="">
                   </button>
                 </div>
@@ -69,11 +64,33 @@ const displayPost = (posts) => {
     `;
     categoryCardContainer.append(categoryCard);
 
-    
-
   });
 
+
 }
+
+
+const viewPost = (name , viewCount) => {
+  const viewPostContainer = document.getElementById("view-post-container")
+
+  
+
+  const viewCard = document.createElement('div')
+  viewCard.innerHTML = `
+  <div class="flex items-center w-fit mx-auto p-2 my-3 bg-white rounded-xl shadow-lg">
+                <h4 id="view-post-title" class="text-black font-normal">${name}</h4>
+                <div class="flex gap-2 text-gray-500">
+                  <span class="material-symbols-outlined">visibility</span>
+                  <p id="view-post-view">${viewCount}</p>
+                </div>
+              </div>
+  `;
+  viewPostContainer.append(viewCard)
+
+
+}
+
+
 
 
 const disPlayLatestPost = async() => {
