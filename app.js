@@ -36,7 +36,7 @@ const displayPost = (posts) => {
                 </div>
                 <h3 class="text-black my-1 font-semibold">${post.title}</h3>
                 <p>${post.description}</p>
-                <hr style="border: none; border-top: 1px dashed gray;" class="lg:card-hr mx-auto my-5">
+                <hr style="border: none; border-top: 1px dashed gray;" class="card-hr mx-auto my-5">
                 <div class="flex justify-between">
                   <div class=" flex gap-6">
                     <div class="flex gap-2 text-gray-500">
@@ -76,7 +76,7 @@ const viewPost = (name , viewCount) => {
 
   const viewCard = document.createElement('div')
   viewCard.innerHTML = `
-  <div class="flex items-center w-fit mx-auto p-2 my-3 bg-white rounded-xl shadow-lg">
+  <div class="flex sm:justify-between items-center lg:w-fit mx-auto p-2 my-3 bg-white rounded-xl shadow-lg">
                 <h4 id="view-post-title" class="text-black font-normal">${name}</h4>
                 <div class="flex gap-2 text-gray-500">
                   <span class="material-symbols-outlined">visibility</span>
