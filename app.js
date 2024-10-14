@@ -36,7 +36,7 @@ const displayPost = (posts) => {
                 </div>
                 <h3 class="text-black my-1 font-semibold">${post.title}</h3>
                 <p>${post.description}</p>
-                <hr style="border: none; border-top: 1px dashed gray;" class="card-hr mx-auto my-5">
+                <hr style="border: none; border-top: 1px dashed gray;" class="lg:card-hr mx-auto my-5">
                 <div class="flex justify-between">
                   <div class=" flex gap-6">
                     <div class="flex gap-2 text-gray-500">
