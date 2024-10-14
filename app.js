@@ -85,14 +85,14 @@ const viewPost = (name , viewCount) => {
               </div>
   `;
   viewPostContainer.append(viewCard)
-  
-  if(viewPostContainer.childElementCount > 0){
-    countNumber.innerText = viewPostContainer.childElementCount;
-  }
 
   if(viewPostContainer.childElementCount > 6){
     viewCard.classList.add('hidden')
     alert`You have already read all news. Thanks for reading the news.`
+  }
+  
+  if(viewPostContainer.childElementCount > 0){
+    countNumber.innerText = viewPostContainer.childElementCount;
   }
 
 }

@@ -52,7 +52,7 @@
       <!-- banner section -->
       <section class=" bg-black rounded-2xl bg-cover bg-center bg-no-repeat"
         style="background-image: url(images/bgbanner.png);">
-        <div class="flex  justify-around items-center h-[500px] text-white">
+        <div class="flex justify-around items-center h-[500px] text-white">
           <div>
             <h3 class="text-5xl font-bold leading-normal">Welcome to the<br><span class="text-blue-400">ReTro</span> Forum</h3>
             <p class="font-normal leading-normal">Share your favorite opinion and win and wp<br>forum coffee mug!</p>
@@ -61,7 +61,7 @@
               <button onclick="handleSearch()" class="btn-sm bg-blue-400 rounded-full font-medium px-7">Search</button>
             </label>
           </div>
-          <div class="flex justify-between gap-5 bg-white text-black p-10 rounded-xl text-xl">
+          <div class="flex sm:hidden lg:flex justify-between gap-5 bg-white text-black p-10 rounded-xl text-xl">
             <div>
               <p>Registered Users</p>
               <p>Forum</p>
@@ -89,11 +89,11 @@
           <span id="loading-spinner" class="loading loading-spinner loading-lg"></span>
         </div>
         <!-- discuss category card section -->
-        <div class="flex">
-          <div id="category-card-container" class="flex flex-1 flex-col gap-5">
+        <div class="flex  sm:flex-col gap-14 lg:flex-row">
+          <div id="category-card-container" class="flex flex-1 flex-col gap-5 ">
           </div>
           <!-- Mark as read Title section -->
-          <div id="title-container" class="title-container w-80 h-[550px] ml-10 p-5 rounded-xl bg-gray-100">
+          <div id="title-container" class="title-container w-80 h-[550px] ml-10 p-5 rounded-xl bg-gray-100 sm:ml-0">
             <div class="flex justify-between mb-5">
               <h6 class="text-lg font-semibold">Title</h6>
               <div class="flex gap-1">
@@ -128,7 +128,7 @@
           <span id="latest-loading-spinner" class="loading loading-spinner loading-lg"></span>
         </div>
         <!-- latest post card -->
-        <div id="latest-post-container" class="grid grid-cols-3 gap-5">
+        <div id="latest-post-container" class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         </div>
       </section>
     </main>
